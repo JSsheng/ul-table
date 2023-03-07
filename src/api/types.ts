@@ -59,3 +59,32 @@ export interface SubListReq {
   itemPath: string
   sn?: number
 }
+
+// strategy-template
+export interface EditListReq {
+  tplName: string
+  sn: number
+}
+
+export interface EditNewReq {
+  tplName: string
+  des: string
+  sn: number
+}
+
+export interface SetItem {
+  jsonField: string
+  kind: string
+  stAttr: string
+  show: boolean
+  des: string
+}
+
+export interface EditSetReq {
+  tplName: string
+  des: string
+  items: SetItem[] 
+}
+
+
+
