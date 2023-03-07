@@ -16,7 +16,9 @@ export default {
   Strategy_Template: {
     title: "Semplate Name",
     des: "Des",
-    operation:'Operation'
+    operation: 'Operation',
+    edit: 'Edit',
+    delete:'Delete'
   },
   Strategy_Edit: {
     title: 'Proto Name',
@@ -24,6 +26,7 @@ export default {
     paraname: 'Para Name',
     show: "Show",
     des: "Des",
-    operation:"Operation"
+    operation: "Operation",
+    edit: 'Edit'
   }
 }
