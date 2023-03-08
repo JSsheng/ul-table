@@ -1,33 +1,31 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { reactive } from 'vue'
 import { ElTable } from 'element-plus'
 import router from '../../router'
+import { useRoute } from "vue-router";
 import {getstinstplinsList} from '../../api/strategy-template'
 
 
 
-
-
+const route = useRoute()
+const state = reactive({
+  TabDataList:[]
+})
 getstinstplinsList({ tplName: "*", sn: 1 }).then((res) => {
-  tableData = res.data
+  state.TabDataList = res.data || []
  })
 
 
-
+ const type = route.query?.name as string || "";
 let tableData: never[] = []
 
-// const edit = () => {
-//   router.push({
-//     path: "/strategy-template/template-edit",
-//   })
-// }
 
-const edit = (url: string) => {
+const edit = () => {
   router.push({
     path: "/strategy-template/template-edit",
     query: {
       parent: JSON.stringify({
-        // name: type
+        name: type
       })
     }
   })

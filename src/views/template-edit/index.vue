@@ -1,11 +1,16 @@
   <script lang="ts" setup>
+  import {reactive} from 'vue'
   import { ElTable } from 'element-plus'
   import { getsetinsList } from '../../api/strategy-template'
 
   
+
+const stae = reactive({
+  TabDataList: []
+})
   
 getsetinsList({ tplName: "", des: "", items: [] }).then((res) => {
-  tableData = res.data
+  stae.TabDataList = res.data || []
 })
 
   let tableData: never[] = []
